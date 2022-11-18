@@ -17,7 +17,7 @@ console.groupCollapsed("WHILE / FOR");
   }
   console.groupEnd();
 
-  console.groupCollapsed("2. Sukurkite ciklą kuris atspausdintų nuo 1 iki 5. Naudojant <");
+  console.groupCollapsed("2. Sukurkite ciklą kuris atspausdintų nuo 1 iki 5. Naudojant < ");
   {
     let i = 1;
     console.log("While:");
