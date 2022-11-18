@@ -1,81 +1,144 @@
-console.groupCollapsed('1. Parašykite funkciją, kuri grąžina pirmą masyvo elementą.');
+console.groupCollapsed("1. Parašykite funkciją, kuri grąžina pirmą masyvo elementą.");
 {
-  // ...sprendimas ir spausdinimas
+  function pirmasElementas(arr) {
+    console.log(arr[0]);
+  }
+  pirmasElementas(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('2. Parašykite funkciją, kuri pašalina pirmą masyvo elementą ir jį grąžina.');
+console.groupCollapsed("2. Parašykite funkciją, kuri pašalina pirmą masyvo elementą ir jį grąžina.");
 {
-  // ...sprendimas ir spausdinimas
+  function pasalintiPirma(arr) {
+    console.log(arr.shift());
+  }
+  pasalintiPirma(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('3. Parašykite funkciją, kuri grąžina paskutinį masyvo elementą.');
+console.groupCollapsed("3. Parašykite funkciją, kuri grąžina paskutinį masyvo elementą.");
 {
-  // ...sprendimas ir spausdinimas
+  function paskutinisElementas(arr) {
+    console.log(arr[arr.length - 1]);
+  }
+  paskutinisElementas(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('4. Parašykite funkciją, kuri pašalina paskutinį masyvo elementą ir jį grąžina.');
+console.groupCollapsed("4. Parašykite funkciją, kuri pašalina paskutinį masyvo elementą ir jį grąžina.");
 {
-  // ...sprendimas ir spausdinimas
+  function pasalintiPaskutini(arr) {
+    console.log(arr.pop());
+  }
+  pasalintiPaskutini(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('5. Parašykite funkciją, kuri grąžina elementų kiekį masyve');
+console.groupCollapsed("5. Parašykite funkciją, kuri grąžina elementų kiekį masyve");
 {
-  // ...sprendimas ir spausdinimas
+  function elementuKiekis(arr) {
+    console.log(arr.length);
+  }
+  elementuKiekis(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('6. Parašykite funkciją, kuri atspausdina paskutinio masyvo elemento indeksą');
+console.groupCollapsed("6. Parašykite funkciją, kuri atspausdina paskutinio masyvo elemento indeksą");
 {
-  // ...sprendimas ir spausdinimas
+  function paskutinisIndeksas(arr) {
+    console.log(arr.indexOf(arr[arr.length - 1]));
+  }
+  paskutinisIndeksas(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('7. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indeksus eilutėmis');
+console.groupCollapsed("7. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indeksus eilutėmis");
 {
-  // ...sprendimas ir spausdinimas
+  function visiElementai(arr) {
+    arr.forEach((el) => {
+      console.log(arr.indexOf(el));
+    });
+  }
+  visiElementai(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('8. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento reikšmes eilutėmis');
+console.groupCollapsed("8. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento reikšmes eilutėmis");
 {
-  // ...sprendimas ir spausdinimas
+  function visosReiksmes(arr) {
+    arr.forEach((el) => {
+      console.log(el);
+    });
+  }
+  visosReiksmes(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('9. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indekso ir reikšmių poras eilutėmis, tokiu formatu:  ');
+console.groupCollapsed(
+  "9. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indekso ir reikšmių poras eilutėmis, tokiu formatu:  "
+);
 // [0] => reikšmė
 // [1] => reikšmė
 // [2] => reikšmė
 {
-  // ... sprendimas ir spausdinimas
+  function indexReiksmes(arr) {
+    arr.forEach((el) => {
+      console.log([arr.indexOf(el)], "=>", el);
+    });
+  }
+  indexReiksmes(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('10. Parašykite funkciją, kuri atspausdina masyvo elementus atbuline tvarka eilutėmis, iš galo.');
+console.groupCollapsed("10. Parašykite funkciją, kuri atspausdina masyvo elementus atbuline tvarka eilutėmis, iš galo.");
 {
-  // ...sprendimas ir spausdinimas
+  function atbulaiReiksmes(arr) {
+    arr.reverse().forEach((el) => {
+      console.log(el);
+    });
+  }
+  atbulaiReiksmes(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('11. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indeksus vienoje eilutėje: 0 1 2 3 ...');
+console.groupCollapsed("11. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indeksus vienoje eilutėje: 0 1 2 3 ...");
 {
-  // ...sprendimas ir spausdinimas
+  function visiIndeksai(arr) {
+    let newArr = [];
+    arr.forEach((el) => {
+      newArr.push(arr.indexOf(el));
+    });
+    console.log(newArr.join(" "));
+  }
+  visiIndeksai(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('12. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento reikšmes vienoje eilutėje: -111 2 -9 48');
+console.groupCollapsed("12. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento reikšmes vienoje eilutėje: -111 2 -9 48");
 {
-  // ...sprendimas ir spausdinimas
+  function visosReiksmes(arr) {
+    let newArr = [];
+    arr.forEach((el) => {
+      newArr.push(el);
+    });
+    console.log(newArr.join(" "));
+  }
+  visosReiksmes(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
 
-console.groupCollapsed('13. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indekso ir reikšmių poras vienoje eilutėje, tokiu formatu:');
+console.groupCollapsed(
+  "13. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indekso ir reikšmių poras vienoje eilutėje, tokiu formatu:"
+);
 //  [0]=>17 [1]=>8 [2]=>88 ..
 {
-  // ...sprendimas ir spausdinimas
+  function visiIndeksai(arr) {
+    let newArr = [];
+    arr.forEach((el) => {
+      newArr.push("[", arr.indexOf(el), "]", "=>", el);
+    });
+    console.log(newArr.join(" "));
+  }
+  visiIndeksai(["katinas", 8, "trečias", true, "šuo"]);
 }
 console.groupEnd();
