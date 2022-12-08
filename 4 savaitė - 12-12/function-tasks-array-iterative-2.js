@@ -257,82 +257,108 @@ console.groupCollapsed("7. Atspausdinti tik ketvirto kurso studentus");
 }
 console.groupEnd();
 
-console.groupCollapsed("8. Iš students masyvo atrinkti ir atspausdinti visų studentų vidurkius");
+// 7.39;
+// 7.92;
+// 9.2;
+// 9.12;
+// 7.38;
+// 8.56;
+console.group("8. Iš students masyvo atrinkti ir atspausdinti visų studentų vidurkius");
 {
-  const avgGrade = students.map(({ name, surname, modules }) => ({
-    name: name,
-    surname: surname,
-    avgGradeByCourse: modules.map(({ marks, title }) => ({
-      title,
-      avgGrade: marks.reduce((prev, curr) => prev + curr) / marks.length,
-    })),
-    totalAvgGrade: (
-      modules.map(({ marks }) => marks.reduce((prev, curr) => prev + curr, 0) / marks.length).reduce((prev, curr) => prev + curr) /
-      modules.length
-    ).toFixed(2),
-  }));
-  console.log(avgGrade);
-}
+  const newArr = [];
+  students.forEach(({ modules, name, surname }) => {
+    let totalCredits = 0;
+    let totalMarks = 0;
 
+    modules.forEach(({ credits, marks }) => {
+      const studentCredits = credits;
+      const studentMarks = marks;
+      totalMarks += (studentMarks.reduce((prev, curr) => prev + curr, 0) * studentCredits) / studentMarks.length;
+      totalCredits += studentCredits;
+    });
+    const averageGrade = (totalMarks / totalCredits).toFixed(2);
+    newArr.push({
+      name,
+      surname,
+      averageGrade,
+    });
+  });
+  console.log(newArr);
+}
 console.groupCollapsed("9. Atspausdinti visų Informatikos fakulteto studentų vidurkius");
 {
   const filterByFaculty = "Informatikos fakultetas";
-  const avgGrade = students
-    .filter(({ faculty }) => faculty === filterByFaculty)
-    .map(({ name, surname, modules }) => ({
-      name: name,
-      surname: surname,
-      avgGradeByCourse: modules.map(({ marks, title }) => ({
-        title,
-        avgGrade: marks.reduce((prev, curr) => prev + curr) / marks.length,
-      })),
-      totalAvgGrade: (
-        modules.map(({ marks }) => marks.reduce((prev, curr) => prev + curr, 0) / marks.length).reduce((prev, curr) => prev + curr) /
-        modules.length
-      ).toFixed(2),
-    }));
-  console.log(avgGrade);
+  const newArr = [];
+  students.forEach(({ modules, name, surname, faculty }) => {
+    if (faculty !== filterByFaculty) return;
+    let totalCredits = 0;
+    let totalMarks = 0;
+
+    modules.forEach(({ credits, marks }) => {
+      const studentCredits = credits;
+      const studentMarks = marks;
+      totalMarks += (studentMarks.reduce((prev, curr) => prev + curr, 0) * studentCredits) / studentMarks.length;
+      totalCredits += studentCredits;
+    });
+    const averageGrade = (totalMarks / totalCredits).toFixed(2);
+    newArr.push({
+      name,
+      surname,
+      averageGrade,
+    });
+  });
+  console.log(newArr);
 }
 console.groupEnd();
 
 console.groupCollapsed("10. Atspausdinti visų Chemijos fakulteto studentų vidurkius");
 {
   const filterByFaculty = "Chemijos fakultetas";
-  const avgGrade = students
-    .filter(({ faculty }) => faculty === filterByFaculty)
-    .map(({ name, surname, modules }) => ({
-      name: name,
-      surname: surname,
-      avgGradeByCourse: modules.map(({ marks, title }) => ({
-        title,
-        avgGrade: marks.reduce((prev, curr) => prev + curr) / marks.length,
-      })),
-      totalAvgGrade: (
-        modules.map(({ marks }) => marks.reduce((prev, curr) => prev + curr, 0) / marks.length).reduce((prev, curr) => prev + curr) /
-        modules.length
-      ).toFixed(2),
-    }));
-  console.log(avgGrade);
+  const newArr = [];
+  students.forEach(({ modules, name, surname, faculty }) => {
+    if (faculty !== filterByFaculty) return;
+    let totalCredits = 0;
+    let totalMarks = 0;
+
+    modules.forEach(({ credits, marks }) => {
+      const studentCredits = credits;
+      const studentMarks = marks;
+      totalMarks += (studentMarks.reduce((prev, curr) => prev + curr, 0) * studentCredits) / studentMarks.length;
+      totalCredits += studentCredits;
+    });
+    const averageGrade = (totalMarks / totalCredits).toFixed(2);
+    newArr.push({
+      name,
+      surname,
+      averageGrade,
+    });
+  });
+  console.log(newArr);
 }
 console.groupEnd();
 
 console.groupCollapsed("11. Atspausdinti visų Elektros ir elektronikos fakulteto studentų vidurkius");
 {
   const filterByFaculty = "Elektros ir elektronikos fakultetas";
-  const avgGrade = students
-    .filter(({ faculty }) => faculty === filterByFaculty)
-    .map(({ name, surname, modules }) => ({
-      name: name,
-      surname: surname,
-      avgGradeByCourse: modules.map(({ marks, title }) => ({
-        title,
-        avgGrade: marks.reduce((prev, curr) => prev + curr) / marks.length,
-      })),
-      totalAvgGrade: (
-        modules.map(({ marks }) => marks.reduce((prev, curr) => prev + curr, 0) / marks.length).reduce((prev, curr) => prev + curr) /
-        modules.length
-      ).toFixed(2),
-    }));
-  console.log(avgGrade);
+  const newArr = [];
+  students.forEach(({ modules, name, surname, faculty }) => {
+    if (faculty !== filterByFaculty) return;
+    let totalCredits = 0;
+    let totalMarks = 0;
+
+    modules.forEach(({ credits, marks }) => {
+      const studentCredits = credits;
+      const studentMarks = marks;
+      totalMarks += (studentMarks.reduce((prev, curr) => prev + curr, 0) * studentCredits) / studentMarks.length;
+      totalCredits += studentCredits;
+    });
+    const averageGrade = (totalMarks / totalCredits).toFixed(2);
+    newArr.push({
+      name,
+      surname,
+      averageGrade,
+    });
+  });
+  console.log(newArr);
 }
 console.groupEnd();
