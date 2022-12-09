@@ -3,7 +3,7 @@ console.group("21. Sukurkite funkciją, kuri ištrintų pirmą surastą 'a' raid
   function removeFirstLetterA(str) {
     const removableLetter = "a";
     if (str.indexOf(removableLetter) < 0) return `Nėra ${removableLetter} raidės`;
-    findLetterAIndex = str.indexOf("a");
+    findLetterAIndex = str.indexOf(removableLetter);
     const modifiedString = str.slice(0, findLetterAIndex) + str.slice(findLetterAIndex + 1);
     return modifiedString;
   }
@@ -23,7 +23,7 @@ console.group("22. Sukurkite funkciją, kuri ištrintų paskutinę surastą 'a' 
   function removeLastLetterA(str) {
     const removableLetter = "a";
     if (str.indexOf(removableLetter) < 0) return `Nėra ${removableLetter} raidės`;
-    findLetterAIndex = str.lastIndexOf("a");
+    findLetterAIndex = str.lastIndexOf(removableLetter);
     const modifiedString = str.slice(0, findLetterAIndex) + str.slice(findLetterAIndex + 1);
     return modifiedString;
   }
