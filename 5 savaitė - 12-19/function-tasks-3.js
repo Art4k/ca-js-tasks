@@ -121,6 +121,7 @@ console.group("31. Sukurkite funkciją, kuri pirmu parametru priima sakinį ir s
   function splitSentence(sentence) {
     return sentence.split(" ");
   }
+
   console.log("---");
   console.log({
     "Labas aš Jonas": splitSentence("Labas aš Jonas"),
