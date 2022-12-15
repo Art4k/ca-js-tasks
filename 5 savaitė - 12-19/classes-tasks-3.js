@@ -35,7 +35,7 @@ console.groupCollapsed("https://edabit.com/challenge/2FF7RKw9RLwc3EBY9");
     newSolvedChallenge() {}
   }
 
-  // 1. Declare the class instances (two users and six challenges)
+  // 1. Declare the class instances (two users and six challenges).
 
   const user1 = new User("Madam", 0, []);
   const user2 = new User("Steve", 0, []);
@@ -47,7 +47,7 @@ console.groupCollapsed("https://edabit.com/challenge/2FF7RKw9RLwc3EBY9");
   const challenge5 = new Challenge("VH");
   const challenge6 = new Challenge("EX");
 
-  // 2. Set the challenges solved by the users
+  // 2. Set the challenges solved by the users.
   console.log(user1.name, '➞ "Madam"');
   console.log(user2.xp, "➞ 110");
   console.log(user1.log, "➞ [1, 4, 6]");
