@@ -65,9 +65,13 @@ console.group("30. Sukurkite funkciją, kuri taiso pastraipos klaidas");
     */
     const newSentenceArray = [];
     const newSeparatorArray = [];
-    const sentences = paragraph.split(/(\?|\.|!)/);
-    for (let i = 0; i < sentences.length - 1; i++) {
-      i % 2 === 0 ? newSentenceArray.push(sentences[i].trim()) : newSeparatorArray.push(sentences[i]);
+    const sentences = paragraph
+      .split(/(\?|\.|!)/)
+      .slice(0, -1)
+      .map((sentence) => sentence.trim());
+    for (let i = 0; i < sentences.length; i++) {
+      // 0 ir lyginiai index'ai yra sakiniai, o nelyginiai separatoriai.
+      i % 2 === 0 ? newSentenceArray.push(sentences[i]) : newSeparatorArray.push(sentences[i]);
     }
     return { newSentenceArray, newSeparatorArray };
   }
